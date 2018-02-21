@@ -19,19 +19,19 @@ class Song
   @@genres = []
   @@artists = []
   
-  def count
+  def self.count
     @@count
   end
   
-  def genres
+  def self.genres
     @@genres.uniq
   end
   
-  def artists
+  def self.artists
     @@artists.uniq
   end
   
-  def genre_count
+  def self.genre_count
     out = Hash.new(0)
     @@genres.each do |genre|
       out[genre] += 1
@@ -39,7 +39,7 @@ class Song
     out
   end
   
-  def artist_count
+  def self.artist_count
     out = Hash.new(0)
     @@artists.each do |artist|
       out[artist] += 1
@@ -48,6 +48,3 @@ class Song
   end
   
 end
-
-test = Song.new("x","y","z")
-Song.count
